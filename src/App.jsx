@@ -1,9 +1,37 @@
+import { useEffect } from "react"
 function App() {
 
+  navigator.mediaDevices.getUserMedia({
+    video: {
+      facingMode:"",
+    }})
+    .then((mediaStream) => {
+      const video = document.querySelector('video')
+      video.srcObject = mediaStream
+      // video.onloadedmetadata = () => {
+      //   video.play()
+      // }
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+  navigator.mediaDevices.getUserMedia({
+    audio: {
+      echoCancellation: false,
+      noiseSuppression: false,
+      autoGainControl: false
+    }
+  }).then((stream) => {
+    const audio = document.querySelector('audio');
+    audio.srcObject = stream;
+    // audioStream = stream;
+  }).catch(console.error);
+
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <>
+      <video id="video" autoPlay className="w-md "></video>
+      {/* <audio autoPlay></audio> */}
+    </>
   )
 }
 
