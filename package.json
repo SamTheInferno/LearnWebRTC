@@ -11,9 +11,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.15",
-    "fs": "^0.0.1-security",
     "mkcert": "^3.2.0",
-    "path": "^0.12.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tailwindcss": "^4.0.15"

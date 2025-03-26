@@ -4,6 +4,7 @@ function App() {
   navigator.mediaDevices.getUserMedia({
     video: {
       facingMode:"",
+      advanced: [{ imageStabilization: true }]
     }})
     .then((mediaStream) => {
       const video = document.querySelector('video')
